@@ -1,0 +1,16 @@
+.favourite{
+    font-weight: bold;
+}
+.contact-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact-list > *{
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}

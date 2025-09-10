@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('prueba');
+  protected readonly title = signal('agenda-contactos-apps-nativas-2025');
 }

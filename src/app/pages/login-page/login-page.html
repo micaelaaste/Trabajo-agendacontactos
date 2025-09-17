@@ -19,7 +19,7 @@
   @if(isLoading){
   <app-spinner> </app-spinner>
   }
-  <button [disabled]="isLoading" class="boton-inicio">Iniciar sesión</button>
+  <button class="boton-inicio">Iniciar sesión</button>
   @if (errorLogin) {
     <p class="error">Datos de sesión incorrectos, intente nuevamente.</p>
   } 

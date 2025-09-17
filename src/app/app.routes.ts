@@ -7,6 +7,7 @@ import { RegisterPage } from './pages/register-page/register-page';
 import { GroupsPage } from './pages/groups/groups';
 import { onlyPublicUserGuard } from './guards/only-public-user-guard';
 import { onlyLoggedUserGuard } from './guards/only-logged-user-guard';
+import { AddContact } from './pages/add-contact/add-contact';
 
 export const routes: Routes = [
     {
@@ -38,5 +39,9 @@ export const routes: Routes = [
       },
     ]
   },
+  {
+    path: "addContact",
+    component: AddContact
+  }
 
 ];

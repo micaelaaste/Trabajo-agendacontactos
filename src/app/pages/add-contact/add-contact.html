@@ -1,16 +1,4 @@
 
-<div class="container">
-    <span>Nombre</span>
-    <span>Telefono</span>
-    <span>Email</span>
-    <span>Grupos</span>
-    <span>Acciones</span>
-</div>
-<ul>
-    @for (contactoIndividual of contactService.contacts; track $index) {
-        <app-contact-list-item [contact]="contactoIndividual"></app-contact-list-item>
-    }
-</ul>
 <div id="container" class="card">
  <h2>Nuevo contacto</h2>
  <form (ngSubmit)="createContact(newContactForm.value)" #newContactForm="ngForm">
@@ -50,6 +38,6 @@
     <input id="image" name="image" type="text" ngModel minlength="10">
   </div>
   <button [disabled]="newContactForm.invalid">+</button>
+
  </form>
  </div>
-<a routerLink="addContact"> Añadir contacto</a>

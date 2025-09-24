@@ -28,4 +28,7 @@ export class AuthService {
     localStorage.removeItem("token"); /** el local storage guarda las variables en el navegador para que no se borren cuando cambie de pag, dia, etc */
     this.router.navigate(["/login"])
   }
+  addContact(){
+    this.router.navigate(["/"])
+  }
 }

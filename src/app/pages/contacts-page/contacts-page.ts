@@ -23,8 +23,8 @@ export class ContactsPage implements OnInit {
 
 createContact(form: any){
     const nuevoContacto: NewContact ={
-      firstname: form.firstName,
-      lastname: form.lastName,
+      firstName: form.firstName,
+      lastName: form.lastName,
       address: form.address,
       email: form.email,
       image: form.image,

@@ -1,11 +1,7 @@
-<header id="upperBar">
-    <nav class="sections">
-        <div id="sidebar">
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/big-data-regular-monochrome-icon/sidebar-4.png" alt="iconsidebar" width="30" height="30">
-        </div>
-        <a class="botones" routerLink="contactos">Contactos</a>
-        <a class="botones" routerLink="grupos">Grupos</a> 
-        <button (click)="authService.logout()">Log out</button>
-    </nav>
-</header>
+<div id="sidebar">
+    <img src="https://icons.veryicon.com/png/o/miscellaneous/big-data-regular-monochrome-icon/sidebar-4.png" alt="iconsidebar" width="30" height="30">
+    <a class="botones" routerLink="contactos">Contactos</a>
+    <a class="botones" routerLink="grupos">Grupos</a>
+    <button (click)="authService.logout()">Log out</button>
+</div>
 <router-outlet>

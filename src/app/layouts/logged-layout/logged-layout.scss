@@ -1,19 +1,25 @@
-.sections{
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;
-}
+
 .botones{
     text-decoration: none;
     color: rgb(77, 72, 72);
 }
-#upperBar{
-    box-sizing: border-box; 
+button{
+    width: 5rem;
+    background-color: lavender;
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #sidebar{
     display: flex;
     flex-direction: column;
-    margin: none;
-    margin-left: -12rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    padding: 1rem;
+}
+router-outlet{
+    flex-grow: 1;
+    height: 100%;
 }

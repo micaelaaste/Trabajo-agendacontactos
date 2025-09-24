@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NewContact } from '../../interfaces/contact';
-import { Contact } from '../../interfaces/contact';
 import { AuthService } from '../../services/auth-service';
 import { ContactService } from '../../services/contact-services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-contact',
@@ -12,13 +12,14 @@ import { ContactService } from '../../services/contact-services';
   styleUrl: './add-contact.scss'
 })
 export class AddContact {
-authService = inject(AuthService);
+  authService = inject(AuthService);
   contactService = inject(ContactService);
+  router = inject(Router);
 
-createContact(form: any){
-    const nuevoContacto: NewContact ={
-      firstname: form.firstName,
-      lastname: form.lastName,
+  async createContact(form: any) {
+    const nuevoContacto: NewContact = {
+      firstName: form.firstName,
+      lastName: form.lastName,
       address: form.address,
       email: form.email,
       image: form.image,
@@ -26,7 +27,10 @@ createContact(form: any){
       company: form.company,
       isFavorite: form.isFavorite
     }
-    
-    this.contactService.createContact(nuevoContacto)
+
+    if (await this.contactService.createContact(nuevoContacto)) {
+      this.router.navigate(["/"]);
+    }
   }
+
 }

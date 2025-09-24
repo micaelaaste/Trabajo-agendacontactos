@@ -15,7 +15,7 @@ export const routes: Routes = [
         component: LoginPage,
         canActivate: [onlyPublicUserGuard]
     },
-{
+    {
     path: "register",
     component: RegisterPage,
     canActivate: [onlyPublicUserGuard]
@@ -30,8 +30,16 @@ export const routes: Routes = [
         component: ContactsPage
       },
       {
+        path: "addContact",
+        component: AddContact
+      }
+      {
         path: "contacts/:id",
         component: ContactDetailsPage
+      },
+      {
+        path: "contacts/:id/edit",
+        component: AddContact
       },
       {
         path: "groups",
@@ -39,9 +47,4 @@ export const routes: Routes = [
       },
     ]
   },
-  {
-    path: "addContact",
-    component: AddContact
-  }
-
 ];

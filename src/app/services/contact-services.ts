@@ -27,7 +27,20 @@ export class ContactService {
   }
 
   /** devuelve un contacto en particular segun su ID*/
-  getContactById() { }
+  async getContactById(id: string | number) {
+      const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + id,
+      {
+        headers: {
+          Authorization: "Bearer " + this.authService.token,
+        },
+      })
+    if (!res.ok) {
+      return
+    }
+    const resJson: Contact = await res.json()
+    this.contacts.push(resJson);
+    return resJson
+   }
 
   async createContact(nuevoContacto: NewContact) {
     const res = await fetch("https://agenda-api.somee.com/api/Contacts",
@@ -46,7 +59,23 @@ export class ContactService {
     return resJson
   }
 
-  editContact() { }
+  async editContact(contactoEditado: Contact) {
+    const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + contactoEditado, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.authService.token
+      },
+      body: JSON.stringify(contactoEditado)
+    });
+    if (!res.ok) return; 
+    const resContact:Contact = await res.json()
+    this.contacts = this.contacts.map(contact => {
+      if (contact.id == resContact.id) return resContact;
+      return contact
+    })
+    return resContact;
+  }
 
   async deleteContact(id: number) {
     const res = await fetch("https://agenda-api.somee.com/api/Contacts/" + id, {

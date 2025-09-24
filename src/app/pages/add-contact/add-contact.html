@@ -1,7 +1,13 @@
 
 <div id="container" class="card">
- <h2>Nuevo contacto</h2>
- <form (ngSubmit)="createContact(newContactForm.value)" #newContactForm="ngForm">
+  @if (idContacto()) {
+     <h2>Editar contacto</h2>
+  }   
+    @else {
+      <h2>Crear contacto</h2>
+    }
+
+ <form (ngSubmit)="handleFormSubmission(newContactForm.value)" #newContactForm="ngForm">
   <div>
     <label for="first-name">Nombre*</label>
     <input id="first-name" name="firstName" type="text" ngModel required="true" minlength="2" maxlength="20" #firstName="ngModel">
@@ -22,8 +28,8 @@
     <input id="email" name="email" type="email" ngModel maxlength="40">
   </div>
   <div>
-    <label for="favourite">Favorito</label>
-    <input id="favourite" name="isFavourite" type="checkbox" ngModel>
+    <label for="isFavorite">Favorito</label>
+    <input id="isFavorite" name="isFavorite" type="checkbox" ngModel>
   </div>
   <div>
     <label for="address">Direccion</label>
@@ -37,6 +43,10 @@
     <label for="image">URL Imagen</label>
     <input id="image" name="image" type="text" ngModel minlength="10">
   </div>
-  <button [disabled]="newContactForm.invalid">+</button>
+  @if (idContacto()) {
+    <button [disabled]="newContactForm.invalid">Guardar cambios</button>
+  }@else {
+      <button [disabled]="newContactForm.invalid">Crear</button>
+  }
  </form>
  </div>

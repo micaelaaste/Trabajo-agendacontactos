@@ -15,13 +15,14 @@ export class AddContact implements OnInit {
   authService = inject(AuthService);
   contactService = inject(ContactService);
   router = inject(Router);
-  idContacto= input<number>();
-  contactoOriginal:Contact|undefined = undefined;
-  form = viewChild <NgForm> ('newContactForm')
+  idContacto = input<number>();
+  contactoOriginal: Contact | undefined = undefined;
+  form = viewChild<NgForm>('newContactForm')
 
-  async ngOnInit(){
-    if(this.idContacto()){
-      this.contactoOriginal= await this.contactService.getContactById(this.idContacto()!) //* el ! dsp de la variable significa que esta revisado de que no es undefined 
+  async ngOnInit() {
+    console.log(this.idContacto());
+    if (this.idContacto()) {
+      this.contactoOriginal = await this.contactService.getContactById(this.idContacto()!) //* el ! dsp de la variable significa que esta revisado de que no es undefined 
       this.form()?.setValue({
         firstName: this.contactoOriginal!.firstName,
         lastName: this.contactoOriginal!.lastName,
@@ -32,6 +33,15 @@ export class AddContact implements OnInit {
         company: this.contactoOriginal!.company,
         isFavorite: this.contactoOriginal!.isFavorite
       })
+    }
+  }
+
+  async handleFormSubmission(newContact: NewContact) {
+    let res;
+    if (this.idContacto()) {
+      res = await this.contactService.editContact({ ...newContact, id: this.idContacto()!.toString() })
+    } else {
+      res = await this.contactService.createContact(newContact);
     }
   }
 

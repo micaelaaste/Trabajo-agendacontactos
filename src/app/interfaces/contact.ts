@@ -1,5 +1,5 @@
 export interface Contact {
-    id: number,
+    id: string,
     firstName: string,
     lastName: string,
     address: string,
@@ -7,7 +7,6 @@ export interface Contact {
     image: string,
     email: string,
     company: string,
-    userId: number,
     isFavorite: boolean 
 }
 /** interfaz que es igual a Contact pero sin ID */

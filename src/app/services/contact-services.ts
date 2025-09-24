@@ -28,7 +28,7 @@ export class ContactService {
 
   /** devuelve un contacto en particular segun su ID*/
   async getContactById(id: string | number) {
-      const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + id,
+      const res = await fetch('https://agenda-api.somee.com/api/Contacts/' + id,
       {
         headers: {
           Authorization: "Bearer " + this.authService.token,
@@ -37,9 +37,7 @@ export class ContactService {
     if (!res.ok) {
       return
     }
-    const resJson: Contact = await res.json()
-    this.contacts.push(resJson);
-    return resJson
+    return await res.json();
    }
 
   async createContact(nuevoContacto: NewContact) {

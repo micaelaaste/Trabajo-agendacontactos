@@ -77,17 +77,31 @@ export class ContactService {
     return resContact;
   }
 
-  async deleteContact(id: number) {
+  async deleteContact(id: number | string) {
     const res = await fetch("https://agenda-api.somee.com/api/Contacts/" + id, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + this.authService.token
       }
     });
+    if(!res.ok) return; 
     if (res.ok) {
       this.contacts = this.contacts.filter(contact => contact.id !== id) /** this. contacts se iguala a la funcionalidad de lo escrito: revisa cada contacto y se fija se el id del contacto es igual al id del que se desea borrar. si es igual, lo borra, si no, no lo filtra */
     }
+    return true; 
   }
 
-  setFavourite() { }
+  async setFavourite(id: string | number) {
+    const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + id + "favorite",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + this.authService.token,
+        },
+      })
+    if (!res.ok) {
+      return
+    }
+    return true;
+  }
 }

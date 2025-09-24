@@ -27,7 +27,7 @@ export class ContactService {
   }
 
   /** devuelve un contacto en particular segun su ID*/
-  async getContactById(id: string | number) {
+  async getContactById(id: number) {
       const res = await fetch('https://agenda-api.somee.com/api/Contacts/' + id,
       {
         headers: {
@@ -58,7 +58,7 @@ export class ContactService {
   }
 
   async editContact(contactoEditado: Contact) {
-    const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + contactoEditado, {
+    const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + contactoEditado.id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

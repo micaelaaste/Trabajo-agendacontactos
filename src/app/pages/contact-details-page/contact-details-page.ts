@@ -4,18 +4,19 @@ import { Contact } from '../../interfaces/contact';
 import { ContactService } from '../../services/contact-services';
 @Component({
   selector: 'app-contact-details-page',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './contact-details-page.html',
   styleUrl: './contact-details-page.scss'
 })
 export class ContactDetailsPage {
   contactsService = inject (ContactService)
 
-  idContacto = input<number>(); 
+  id = input<number>(); 
 
   contact: Contact | undefined = undefined;
 
   async ngOnInit(){
+    console.log()
     this.contact = await this.contactsService.getContactById(this.id()!)
   }
 }

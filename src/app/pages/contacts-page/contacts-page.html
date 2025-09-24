@@ -8,7 +8,7 @@
     </div>
     <ul>
         @for (contactoIndividual of contactService.contacts; track $index) {
-            <a routerLink="contacts/:id"><app-contact-list-item [contact]="contactoIndividual"></app-contact-list-item></a>
+            <a [routerLink]="'contacts/' + contactoIndividual.id"><app-contact-list-item [contact]="contactoIndividual"></app-contact-list-item></a>
         }
     </ul>
     <a routerLink="addContact"> Añadir contacto</a>

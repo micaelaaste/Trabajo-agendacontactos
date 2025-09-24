@@ -1,5 +1,5 @@
-import { Component, inject, input, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject, input, OnInit, viewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Contact, NewContact } from '../../interfaces/contact';
 import { AuthService } from '../../services/auth-service';
 import { ContactService } from '../../services/contact-services';
@@ -17,11 +17,21 @@ export class AddContact implements OnInit {
   router = inject(Router);
   idContacto= input<number>();
   contactoOriginal:Contact|undefined = undefined;
+  form = viewChild <NgForm> ('newContactForm')
 
   async ngOnInit(){
     if(this.idContacto()){
       this.contactoOriginal= await this.contactService.getContactById(this.idContacto()!) //* el ! dsp de la variable significa que esta revisado de que no es undefined 
-      console.log(this.contactoOriginal)
+      this.form()?.setValue({
+        firstName: this.contactoOriginal!.firstName,
+        lastName: this.contactoOriginal!.lastName,
+        address: this.contactoOriginal!.address,
+        email: this.contactoOriginal!.email,
+        image: this.contactoOriginal!.image,
+        number: this.contactoOriginal!.number,
+        company: this.contactoOriginal!.company,
+        isFavorite: this.contactoOriginal!.isFavorite
+      })
     }
   }
 

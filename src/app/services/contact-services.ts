@@ -102,6 +102,12 @@ export class ContactService {
     if (!res.ok) {
       return
     }
+    this.contacts = this.contacts.map(contact => { /** el map genera un ..... */
+      if(contact.id === id){
+        return {...contact, isFavorite: !contact.isFavorite};
+      };
+      return contact; 
+    });
     return true;
   }
 }

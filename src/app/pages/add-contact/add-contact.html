@@ -44,9 +44,12 @@
     <input id="image" name="image" type="text" ngModel minlength="10">
   </div>
   @if (idContacto()) {
-    <button [disabled]="newContactForm.invalid">Guardar cambios</button>
+    <button [disabled]="newContactForm.invalid || isLoading">Guardar cambios</button>
   }@else {
-      <button [disabled]="newContactForm.invalid">Crear</button>
+      <button [disabled]="newContactForm.invalid || isLoading">Crear</button>
+  }
+  @if(isLoading){
+  <app-spinner> </app-spinner>
   }
  </form>
  </div>

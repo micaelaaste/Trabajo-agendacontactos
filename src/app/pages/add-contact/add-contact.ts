@@ -6,6 +6,7 @@ import { ContactService } from '../../services/contact-services';
 import { Router } from '@angular/router';
 import { Spinner } from '../../components/spinner/spinner';
 
+
 @Component({
   selector: 'app-add-contact',
   imports: [FormsModule, Spinner],
@@ -60,14 +61,12 @@ export class AddContact implements OnInit {
       company: form.company,
       isFavorite: form.isFavorite
     }
-
     if (await this.contactService.createContact(nuevoContacto)) {
       this.router.navigate(["/"]);
     }
   }
 
 }
-  function createContact(form: any, any: any) {
-  throw new Error('Function not implemented.');
-}
+
+
 

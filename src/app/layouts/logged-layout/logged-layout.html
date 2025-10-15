@@ -1,7 +1,12 @@
-<div id="sidebar">
-    <img src="https://icons.veryicon.com/png/o/miscellaneous/big-data-regular-monochrome-icon/sidebar-4.png" alt="iconsidebar" width="30" height="30">
-    <a class="botones" routerLink="contactos">Contactos</a>
-    <a class="botones" routerLink="grupos">Grupos</a>
-    <button (click)="openLogoutModal()">Log out</button>
+<header>
+    <h1>Pagina de contactos</h1>
+</header>
+<div id="main-container">
+    <div id="sidebar">
+        <img src="https://icons.veryicon.com/png/o/miscellaneous/big-data-regular-monochrome-icon/sidebar-4.png" alt="iconsidebar" width="30" height="30">
+        <a class="botones" routerLink="contactos">Contactos</a>
+        <a class="botones" routerLink="grupos">Grupos</a>
+    </div>
+        <button id="logoutButton" (click)="openLogoutModal()">Log out</button>
 </div>
-<router-outlet>
+<router-outlet></router-outlet>

@@ -1,3 +1,22 @@
 .contacts-page-container {
 	padding: 2rem;
+	width: 70rem;
+	display: block;
+	justify-self: right;
+}
+.row{
+	color: rgba(51, 83, 121, 0.664);
+	font-weight: 500;
+}
+.datosContacto{
+	color:rgba(51, 83, 121, 0.664);
+	font-weight: 500;
+}
+.add-contact-container{
+	font-weight: 550;
+	font-size: large;
+	color: rgba(51, 83, 121, 0.664);
+}
+.add-contact-container:hover{
+	color: rgba(67, 106, 158, 0.486);
 }

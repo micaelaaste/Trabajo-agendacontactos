@@ -48,6 +48,8 @@ export class AddContact implements OnInit {
       res = await this.contactService.createContact(newContact);
     }
     this.isLoading = false 
+    this.router.navigate(["/"])
+  
     }
 
   async createContact(form: any) {

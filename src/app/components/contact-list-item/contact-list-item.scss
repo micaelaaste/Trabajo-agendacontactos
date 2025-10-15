@@ -14,3 +14,18 @@
     align-items: center;
     padding: 10px;
 }
+.botonesDeAccion{
+    justify-content: space-between;
+}
+.botonBorrar{
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(51, 83, 121, 0.664);
+    background-color: lavender;
+}
+.botonEdit{
+    color: rgba(51, 83, 121, 0.664);
+    font-weight: 600;
+}

@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { Contact } from '../../interfaces/contact';
 import { ContactService } from '../../services/contact-services';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,6 +14,7 @@ export class ContactListItem {
   contact= input.required<Contact>()
   aleatorio = Math.random()
   contactsService = inject(ContactService)
+  router = inject(Router)
 
   openDeleteModal(){
       Swal.fire({
@@ -26,6 +27,7 @@ export class ContactListItem {
       }).then((result) => {
           if (result.isDenied) {
           this.contactsService.deleteContact(this.contact().id)
+          this.router.navigate(["/"])
         }
       });
     }

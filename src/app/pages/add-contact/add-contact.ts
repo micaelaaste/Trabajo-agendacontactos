@@ -35,7 +35,7 @@ export class AddContact implements OnInit {
         number: this.contactoOriginal!.number,
         company: this.contactoOriginal!.company,
         isFavorite: this.contactoOriginal!.isFavorite
-      })
+      }) 
     }
   }
 
@@ -47,28 +47,10 @@ export class AddContact implements OnInit {
     } else {
       res = await this.contactService.createContact(newContact);
     }
-    this.isLoading = false 
+    this.isLoading = false;
     this.router.navigate(["/"])
-  
-    }
-
-  async createContact(form: any) {
-    const nuevoContacto: NewContact = {
-      firstName: form.firstName,
-      lastName: form.lastName,
-      address: form.address,
-      email: form.email,
-      image: form.image,
-      number: form.number,
-      company: form.company,
-      isFavorite: form.isFavorite
-    }
-    if (await this.contactService.createContact(nuevoContacto)) {
-      this.router.navigate(["/"]);
     }
   }
-
-}
 
 
 

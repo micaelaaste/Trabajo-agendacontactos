@@ -63,17 +63,16 @@ export class ContactService {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + this.authService.token
+        Authorization: "Bearer " + this.authService.token,
       },
-      body: JSON.stringify(contactoEditado)
+      body: JSON.stringify(contactoEditado),
     });
     if (!res.ok) return; 
-    const resContact:Contact = await res.json()
     this.contacts = this.contacts.map(contact => {
-      if (contact.id == resContact.id) return resContact;
+      if (contact.id === contactoEditado.id) return contactoEditado;
       return contact
     })
-    return resContact;
+    return contactoEditado;
   }
 
   async deleteContact(id: number | string) {

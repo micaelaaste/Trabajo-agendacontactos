@@ -1,12 +1,12 @@
 
-<div id="container" class="card">
+<div id="main-container" class="card">
   @if (idContacto()) {
      <h2>Editar contacto</h2>
   }   
     @else {
       <h2>Crear contacto</h2>
     }
-
+<div class="container">
  <form (ngSubmit)="handleFormSubmission(newContactForm.value)" #newContactForm="ngForm">
   <div>
     <label for="first-name">Nombre*</label>
@@ -52,4 +52,5 @@
   <app-spinner></app-spinner>
   }
  </form>
+ </div>
  </div>

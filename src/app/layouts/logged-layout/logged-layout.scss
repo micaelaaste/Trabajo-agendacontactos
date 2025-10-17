@@ -24,9 +24,8 @@ h1{
 #sidebar{
     display: flex;
     flex-direction: column;
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding: 1rem;
+    align-items: center;
+    height: calc(100vh - 80px);
     background-color: rgba(212, 224, 236, 0.822);
 }
 router-outlet{
@@ -41,7 +40,6 @@ router-outlet{
     font-weight: 400;
     width: 6rem;
     background-color: lavender;
-    margin-top: 5px;
     margin: 15px;
     color: rgba(51, 83, 121, 0.664);
     font-weight: 600;

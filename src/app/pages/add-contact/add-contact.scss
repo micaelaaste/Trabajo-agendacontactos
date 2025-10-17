@@ -27,6 +27,6 @@ button{
 button:hover{
     background-color: rgba(209, 209, 228, 0.747);
 }
-#container{
-    justify-items: center;
+#main-container{
+    margin-left: -50rem; // no podia correrlo de otra forma je 
 }

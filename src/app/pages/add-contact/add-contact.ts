@@ -43,7 +43,7 @@ export class AddContact implements OnInit {
     let res;
     this.isLoading= true
     if (this.idContacto()) {
-      res = await this.contactService.editContact({ ...newContact, id: this.idContacto()!.toString() })
+      res = await this.contactService.editContact({ ...newContact, id: this.idContacto()!.toString()});
     } else {
       res = await this.contactService.createContact(newContact);
     }

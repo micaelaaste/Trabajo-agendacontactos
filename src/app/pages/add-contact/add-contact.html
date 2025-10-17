@@ -28,7 +28,7 @@
     <input id="email" name="email" type="email" ngModel maxlength="40">
   </div>
   <div>
-    <label for="isFavorite">Favorito</label>
+    <label for="isFavorite" (click)="toggleFavorite()">Favorito</label>
     <input id="isFavorite" name="isFavorite" type="checkbox" ngModel>
   </div>
   <div>

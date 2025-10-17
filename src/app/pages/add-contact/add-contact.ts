@@ -21,6 +21,8 @@ export class AddContact implements OnInit {
   contactoOriginal: Contact | undefined = undefined;
   form = viewChild<NgForm>('newContactForm');
   isLoading = false; 
+  contact: Contact | undefined; 
+
 
   async ngOnInit() {
     console.log(this.idContacto());
@@ -50,6 +52,13 @@ export class AddContact implements OnInit {
     this.isLoading = false;
     this.router.navigate(["/"])
     }
+
+    async toggleFavorite(){
+    if(this.contact){
+      const res= await this.contactService.setFavourite(this.contact.id);
+      if(res) this.contact.isFavorite = !this.contact.isFavorite;
+    }
+  }
   }
 
 

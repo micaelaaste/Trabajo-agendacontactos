@@ -19,4 +19,10 @@ export class ContactDetailsPage {
     console.log()
     this.contact = await this.contactsService.getContactById(this.id()!)
   }
+  async toggleFavorite(){
+    if(this.contact){
+      const res= await this.contactsService.setFavourite(this.contact.id);
+      if(res) this.contact.isFavorite = !this.contact.isFavorite;
+    }
+  }
 }

@@ -90,13 +90,13 @@ export class ContactService {
   }
 
   async setFavourite(id: string | number) {
-    const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + id + "favorite",
+    const res = await fetch("https://agenda-api.somee.com/api/Contacts" + "/" + id + "/favorite",
       {
         method: "POST",
         headers: {
           Authorization: "Bearer " + this.authService.token,
         },
-      })
+      });
     if (!res.ok) {
       return
     }

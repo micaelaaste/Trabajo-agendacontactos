@@ -1,21 +1,32 @@
-<h1>Datos del contacto</h1>
-<div>
-    @if(contact){
-    <li class="contact-list row" [class.favourite]="contact.isFavorite===true">
-        <span>{{contact.firstName}} {{contact.lastName}}</span>
-        <span>{{contact.number}}</span>
-        <span>{{contact.email}}</span>
-        <span>-</span>
-        <span>
-            <button (click)="contactsService.deleteContact(contact.id)">Borrar</button>
-            <a [routerLink]="['/contacts',contact.id, 'edit']">Editar</a>
+<div id="container-details">
+  <h1>Datos del contacto</h1>
+  <img
+    src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" alt="Foto de contacto" width="100"/>
+  @if (contact) {
+    <div class="contact-card" [class.favourite]="contact.isFavorite === true">
+      <div class="contact-info">
+        <span class="details name">
+          {{ contact.firstName }} {{ contact.lastName }}
         </span>
-        <span>
-        @if(contact.isFavorite===true){
-            ⭐ 
+        @if (contact.isFavorite === true) {
+          <span class="favorite">⭐</span>
         }
+        <span class="details number">
+          {{ contact.number }}
         </span>
-        
-    </li>
-}
+      </div>
+      <span class="details email">
+        {{ contact.email }}
+      </span>
+      <div class="buttons">
+        @if (contact.isFavorite === true) {
+          <button (click)="toggleFavorite()">Desmarcar como favorito</button>
+        } @else {
+          <button (click)="toggleFavorite()">Marcar como favorito</button>
+        }
+        <button (click)="contactsService.deleteContact(contact.id)">Borrar</button>
+        <a [routerLink]="['/contacts', contact.id, 'edit']">Editar</a>
+      </div>
+    </div>
+  }
 </div>

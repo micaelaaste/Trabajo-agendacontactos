@@ -1,8 +1,8 @@
 <li class="contact-list row" [class.favourite]="contact().isFavorite===true">
-    <span>{{contact().firstName}} {{contact().lastName}}</span>
-    <span>{{contact().number}}</span>
-    <span>{{contact().email}}</span>
-    <span>-</span>
+    <a class="datosContacto" [routerLink]="'contacts/' + contact().id"><span>{{contact().firstName}} {{contact().lastName}}</span></a>
+    <span class="datosContacto">{{contact().number}}</span>
+    <span class="datosContacto">{{contact().email}}</span>
+    <span class="datosContacto">-</span>
     <span class="acciones">
          @if(contact().isFavorite===true){
         <p>⭐</p> 

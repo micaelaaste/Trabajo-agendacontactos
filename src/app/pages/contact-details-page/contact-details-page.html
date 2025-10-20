@@ -1,7 +1,9 @@
 <div id="container-details">
   <h1>Datos del contacto</h1>
   <img
-    src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" alt="Foto de contacto" width="100"/>
+    [src]= 'contact?.image' 
+    alt="Foto de contacto"
+    class="contact-pic" />
   @if (contact) {
     <div class="contact-card" [class.favourite]="contact.isFavorite === true">
       <div class="contact-info">

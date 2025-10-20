@@ -3,9 +3,6 @@ import { Contact, NewContact } from '../interfaces/contact';
 import { AuthService } from './auth-service';
 import { AddContact } from '../pages/add-contact/add-contact';
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })

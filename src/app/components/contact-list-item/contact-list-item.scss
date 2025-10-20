@@ -22,6 +22,7 @@
     margin: 2px;
     color: rgba(51, 83, 121, 0.664);
     background-color: lavender;
+    cursor: pointer;
 }
 .botonEdit{
     color: rgba(51, 83, 121, 0.664);
@@ -31,4 +32,9 @@
 .acciones{
     display: block;
     margin-right: 17px;
+}
+.datosContacto{
+	color:rgba(51, 83, 121, 0.664);
+	font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

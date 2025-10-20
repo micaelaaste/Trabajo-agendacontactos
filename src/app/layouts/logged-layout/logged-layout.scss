@@ -25,8 +25,9 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     height: calc(100vh - 80px);
-    background-color: rgba(212, 224, 236, 0.822);
+    background-color: rgba(194, 210, 226, 0.822);
 }
 router-outlet{
     flex-grow: 1;
@@ -52,4 +53,19 @@ router-outlet{
     justify-content: space-between;
     align-items: center;
     height: 100%;
+}
+.add-contact-container{
+	font-weight: 550;
+	font-size: 16px;
+	color: rgba(51, 83, 121, 0.664);
+}
+.add-contact-container:hover{
+	color: rgba(67, 106, 158, 0.486);
+}
+#menu-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    justify-content: center;
 }

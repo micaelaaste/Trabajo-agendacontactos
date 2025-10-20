@@ -16,7 +16,6 @@ export class ContactDetailsPage {
   contact: Contact | undefined = undefined;
 
   async ngOnInit(){
-    console.log()
     this.contact = await this.contactsService.getContactById(this.id()!)
   }
   async toggleFavorite(){

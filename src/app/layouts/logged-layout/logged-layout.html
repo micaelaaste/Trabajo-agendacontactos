@@ -3,9 +3,11 @@
 </header>
 <div id="main-container">
     <div id="sidebar">
-        <img src="https://icons.veryicon.com/png/o/miscellaneous/big-data-regular-monochrome-icon/sidebar-4.png" alt="iconsidebar" width="30" height="30">
-        <a class="botones" routerLink="/">Contactos</a>
-        <a class="botones" routerLink="grupos">Grupos</a>
+        <div id="menu-links">
+            <a class="botones" routerLink="/">Contactos</a>
+            <a class="botones" routerLink="grupos">Grupos</a>
+            <a class="add-contact-container" routerLink="addContact"> Crear contacto </a>
+        </div>
         <button id="logoutButton" (click)="openLogoutModal()">Log out</button>
     </div>
     <router-outlet></router-outlet>

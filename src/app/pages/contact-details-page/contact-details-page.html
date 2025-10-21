@@ -1,5 +1,6 @@
 <div id="container-details">
-  <h1>Datos del contacto</h1>
+  <a  class="return-link" routerLink= "/"> ← </a>
+  <h1>  Datos del contacto</h1>
   <img
     [src]= 'contact?.image' 
     alt="Foto de contacto"
@@ -27,7 +28,7 @@
           <button (click)="toggleFavorite()">Marcar como favorito</button>
         }
         <button (click)="contactsService.deleteContact(contact.id)">Borrar</button>
-        <a [routerLink]="['/contacts', contact.id, 'edit']">Editar</a>
+        <a class="edit-link" [routerLink]="['/contacts', contact.id, 'edit']">Editar</a>
       </div>
     </div>
   }

@@ -24,17 +24,30 @@
     background-color: lavender;
     cursor: pointer;
 }
+.botonBorrar:hover{
+    transform: translateX(-10px);
+}
 .botonEdit{
     color: rgba(51, 83, 121, 0.664);
     font-weight: 600;
     margin: 2px;
+}
+.botonEdit:hover{
+    transform: translateX(10px);
 }
 .acciones{
     display: block;
     margin-right: 17px;
 }
 .datosContacto{
-	color:rgba(51, 83, 121, 0.664);
+	color: black; //rgba(51, 83, 121, 0.664)
 	font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.star{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
 }

@@ -31,26 +31,21 @@ form{
     flex-direction: column;
     align-items: center;
 }
-.username input{
-    width: 15rem;
-    border: none;
-    padding: 10px;
-    background-color: lavender;
-    border-bottom: 2px solid rgb(211, 210, 210);
-}
+
 .boton-inicio{
     padding: 10px;
     margin-top: 10px;
-    border: 1px solid rgb(216, 216, 233);
     font-weight: 600;
+    border: 1px solid rgb(216, 216, 233);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(227, 243, 245);
+    background-color: lavender;
     width: 10rem;
-    border-radius: 15px;
+    border-radius: 5px;
+    font-size: 14px;
 }
 .boton-inicio:hover{
     background-color: rgb(206, 206, 243);
-    border: 1px solid lavender;
+    border: 1px solid rgb(221, 221, 240);
 }
 .register-text{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -66,10 +61,12 @@ form{
     color: rgb(4, 4, 92);
 }
 .container-input{
-    border-radius: 10px;
     border: none;
-    background-color: rgb(227, 243, 245);
-    padding: 7px;
+    background-color: lavender;
+    width: 10rem;
+    border: none;
+    padding: 5px;
+    border-bottom: 2px solid rgb(211, 210, 210);
     margin: 10px;
 }
 .error{
@@ -78,3 +75,4 @@ form{
     display: flex;
     justify-content: center;
 }
+
